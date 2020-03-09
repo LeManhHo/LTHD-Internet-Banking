@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
+  appBar: {
+    position: 'fixed',
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -38,7 +41,7 @@ function Header() {
   const classes = useStyles();
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <RouterLink to="/" className={classes.logo}>
             <img className={classes.logoImg} alt="Logo" src={logoImg} />
@@ -56,6 +59,12 @@ function Header() {
           </IconButton>
         </Toolbar>
       </AppBar>
+      <style jsx>{`
+        .app-bar {
+          color: #263238;
+          background-color: #fff;
+        }
+      `}</style>
     </div>
   );
 }
